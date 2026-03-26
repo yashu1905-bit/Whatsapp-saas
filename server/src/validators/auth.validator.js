@@ -1,20 +1,22 @@
 class AuthValidator {
     async validateRegisterRequest(req, res, next) {
         try {
-            const { email, password } = req.body;
-            if (!email) {
+            //  const { email, password } = req.body;
+            console.log(req.body);
+            if (!req.body.email) {
                 res.status(400).json({ message: "Email is required" });
             }
-            if (!password) {
+            if (!req.body.password) {
                 res.status(400).json({ message: "Password is required" });
             }
             next();
 
         } catch (error) {
-            res.status(500).json({ message: "Internal server error" });
+            res.status(500).json({ message: "Internal server error", error: error.message });
 
         }
     }
+    
     async validateLoginRequest(req, res, next) {
         try {
             const { email, password } = req.body;
