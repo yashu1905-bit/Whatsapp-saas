@@ -11,7 +11,7 @@ import sendMail from "./src/services/email.service.js"
 app.listen(config.PORT, () => {
     console.log(`Server up and running on http://${config.HOST}:${config.PORT}`)
     connectDB();
-     sendMail("yashuu1910@gmail.com", "Test Subject", "<h1>Hello, World!</h1>", { content: "This is a test email." });
+    // sendMail("yashuu1910@gmail.com", "Test Subject", "<h1>Hello, World!</h1>", { content: "This is a test email." });
 })
 
 

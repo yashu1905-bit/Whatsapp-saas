@@ -9,6 +9,7 @@ class AuthValidator {
             if (!req.body.password) {
                 res.status(400).json({ message: "Password is required" });
             }
+            
             next();
 
         } catch (error) {
